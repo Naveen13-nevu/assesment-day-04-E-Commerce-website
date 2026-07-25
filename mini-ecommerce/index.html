@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NaveenTech | Mini Electronics Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-mark">&lt;/&gt;</span>
+          <span class="logo-text">Naveen<strong>Tech</strong></span>
+        </div>
+
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for laptops, mobiles, headphones..."
+            autocomplete="off"
+          />
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <div class="header-actions">
+          <button id="wishlistBtn" class="icon-btn" title="Wishlist">
+            ❤ <span id="wishlistCount" class="badge">0</span>
+          </button>
+          <button id="cartBtn" class="icon-btn" title="Cart">
+            🛒 <span id="cartCount" class="badge">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">New season electronics</p>
+        <h1>Upgrade your everyday tech.</h1>
+        <p class="hero-subtext">
+          Laptops, phones, headphones, smart watches and accessories — all in
+          one place, at prices that make sense.
+        </p>
+      </div>
+    </section>
+
+    <section class="filter-bar">
+      <div class="filter-inner">
+        <div class="filter-group">
+          <label for="categorySelect">Category</label>
+          <select id="categorySelect">
+            <option value="All">All</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Headphone">Headphone</option>
+            <option value="Smart Watch">Smart Watch</option>
+            <option value="Accessories">Accessories</option>
+          </select>
+        </div>
+
+        <div class="filter-group price-filter">
+          <label for="priceRange">
+            Max Price: <span id="priceValue">100000</span>
+          </label>
+          <input
+            type="range"
+            id="priceRange"
+            min="500"
+            max="100000"
+            step="500"
+            value="100000"
+          />
+        </div>
+
+        <p class="result-count" id="resultCount"></p>
+
+        <div class="filter-group compare-controls">
+          <button id="compareBtn" class="btn btn-primary" disabled>
+            Compare Products (<span id="compareCount">0</span>/2)
+          </button>
+          <button id="clearCompareBtn" class="btn btn-outline">
+            Clear Comparison
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section id="productGrid" class="product-grid"></section>
+
+      <p id="noResults" class="no-results" style="display: none">
+        No products match your search/filters. Try changing them.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-text">Naveen<strong>Tech</strong></span>
+          <p>Everyday electronics, honestly priced.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Shop</h4>
+          <p>Laptops</p>
+          <p>Mobiles</p>
+          <p>Headphones</p>
+          <p>Smart Watches</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Support</h4>
+          <p>Contact Us</p>
+          <p>Shipping Info</p>
+          <p>Returns</p>
+        </div>
+      </div>
+      <p class="footer-bottom">
+        This is a training / assessment project — not a real store. Built with
+        HTML, CSS &amp; JavaScript.
+      </p>
+    </footer>
+    <div id="cartOverlay" class="overlay"></div>
+
+    <aside id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="closeCartBtn" class="close-btn">&times;</button>
+      </div>
+
+      <div id="cartItemsContainer" class="cart-items"></div>
+
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+      </div>
+    </aside>
+
+    <div id="modalOverlay" class="overlay"></div>
+
+    <div id="productModal" class="product-modal">
+      <button id="closeModalBtn" class="close-btn">&times;</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <div id="compareModalOverlay" class="overlay"></div>
+
+    <div id="compareModal" class="product-modal compare-modal">
+      <button id="closeCompareModalBtn" class="close-btn">&times;</button>
+      <div class="modal-details">
+        <h2>Compare Products</h2>
+        <div id="compareModalContent"></div>
+      </div>
+    </div>
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
