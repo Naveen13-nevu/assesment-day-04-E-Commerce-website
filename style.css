@@ -66,21 +66,26 @@ img {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .logo-mark {
-  color: var(--color-secondary);
-  font-weight: 600;
+    font-size: 2rem;
+    color: #2563eb;
 }
 
-.logo-text strong {
-  color: var(--color-secondary);
+.logo-text {
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.logo-text span {
+    color: #2563eb;
 }
 
 .search-bar {
